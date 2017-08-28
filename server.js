@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
+var articles = {
+'article-one': {
     title: 'Article One | Piyush',
     heading: 'Article One',
     date: 'August 28, 2017',
@@ -16,6 +17,21 @@ var articleOne = {
                 Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.
             </p>`
     
+},
+'article-two': {title: 'Article Two | Piyush',
+    heading: 'Article Two',
+    date: 'August 29, 2017',
+    content : ` <p>
+                Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.
+            </p>
+          `},
+'article-three': {
+    title: 'Article Three | Piyush',
+    heading: 'Article Three',
+    date: 'August 30, 2017',
+    content : ` <p>
+                Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.
+            </p>`}
 };
 function createTemplate (data){
     var title = data.title;
@@ -59,18 +75,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res){
- res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res){
+    var articleName = req.params.articleName;
+ res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two', function (req, res){
- res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three', function (req, res){
- res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
