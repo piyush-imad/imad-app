@@ -11,12 +11,12 @@ var articles = {
     heading: 'Article One',
     date: 'August 28, 2017',
     content : ` <p>
-                Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.
+                Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush Sharma and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.
             </p>
             <p>
                 Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.Hi I'm Piyush and for the lack of something better to write I'll just copy this line multiple times.
             </p>`
-    
+
 },
 'article-two': {title: 'Article Two | Piyush',
     heading: 'Article Two',
@@ -38,7 +38,7 @@ function createTemplate (data){
     var heading = data.heading;
     var date = data.date;
     var content = data.content;
-    
+
     var htmlTemplate = `<html>
             <head>
                 <title>
@@ -47,7 +47,7 @@ function createTemplate (data){
                 <meta name = "viewport" content ="width-device-width, initial-scale=1" />
                  <link href="/ui/style.css" rel="stylesheet" />
             </head>
-            
+
             <body>
             <div class ="container">
                 <div>
@@ -66,7 +66,7 @@ function createTemplate (data){
             </div>
             </body>
         </html> `
-            
+
         ;
     return htmlTemplate;
 }
